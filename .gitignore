@@ -1,0 +1,3 @@
+#ignoring large files
+/.terraform
+.terraform.lock.hcl
