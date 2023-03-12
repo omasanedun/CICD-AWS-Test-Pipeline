@@ -41,8 +41,8 @@ resource "aws_iam_policy" "tf-cicd-pipeline-policy-omi" {
 }
 
 resource "aws_iam_role_policy_attachment" "tf-cicd-pipeline-attachment" {
-    policy_arn = aws_iam_policy.tf-cicd-pipeline-policy-omi.arn
     role = aws_iam_role.tf-codepipeline-omi-role.id
+    policy_arn = aws_iam_policy.tf-cicd-pipeline-policy-omi.arn
   
 }
 
@@ -83,11 +83,13 @@ resource "aws_iam_policy" "tf-cicd-build-policy" {
 }
 
 resource "aws_iam_role_policy_attachment" "tf-cicd-codebuild-attachment1" {
-    policy_arn  = aws_iam_policy.tf-cicd-build-policy.arn
     role        = aws_iam_role.tf-codebuild-role.id
+    policy_arn  = aws_iam_policy.tf-cicd-build-policy.arn
+   
 }
 
 resource "aws_iam_role_policy_attachment" "tf-cicd-codebuild-attachment2" {
-    policy_arn  = "arn:aws:iam::aws:policy/PowerUserAccess"
     role        = aws_iam_role.tf-codebuild-role.id
+    policy_arn  = "arn:aws:iam::aws:policy/PowerUserAccess"
+    
 }
