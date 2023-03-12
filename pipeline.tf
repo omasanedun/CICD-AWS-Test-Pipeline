@@ -1,5 +1,5 @@
 resource "aws_codebuild_project" "tf-plan" {
-  name          = "tf-cicd-plan"
+  name          = "tf-cicd-plan2"
   description   = "plan stage for terrafom"
   service_role  = aws_iam_role.tf-codebuild-role.arn
 
@@ -87,7 +87,7 @@ resource "aws_codepipeline" "cicd-test-pipeline" {
             owner = "AWS"
             input_artifacts = ["tf-code"]
             configuration = {
-                ProjectName = "tf-cicd-plan2"
+                ProjectName = "tf-cicd-plan"
             }
         }
     }
