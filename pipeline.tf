@@ -70,7 +70,7 @@ resource "aws_codepipeline" "cicd-test-pipeline" {
             output_artifacts = ["tf-code"]
             configuration = {
                 FullRepositoryId = "omasanedun/CICD-AWS-Test-Pipeline"
-                BranchName   = "master"
+                BranchName   = "main"
                 ConnectionArn = var.codestar_connector_credentials
                 OutputArtifactFormat = "CODE_ZIP"
             }
