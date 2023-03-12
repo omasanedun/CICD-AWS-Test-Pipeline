@@ -20,7 +20,7 @@ resource "aws_iam_role" "tf-codepipeline-omi-role" {
 data "aws_iam_policy_document" "tf-cicd-pipeline-policies-omi" {
     statement {
       sid = ""
-      actions = ["coderstar-connections:UseConnection"]
+      actions = ["codestar-connections:UseConnection"]
       resources = ["*"]
       effect = "Allow"
     
